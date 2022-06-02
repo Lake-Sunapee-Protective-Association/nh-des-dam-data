@@ -28,9 +28,8 @@ jobs:
         install.packages("lubridate")
       shell: Rscript {0}
 
-    - name: Scrape and compile weather
+    - name: Download and collate dam data
       run: |
-        source('nh-des-dam-data.Rproj')
         source('setup_and_source.R')
       shell: Rscript {0}
       
