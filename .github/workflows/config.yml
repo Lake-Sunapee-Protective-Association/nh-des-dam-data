@@ -1,0 +1,42 @@
+name: download and collate dam data
+
+#when it should run
+on:
+  schedule:
+    - cron: "30 12 * * *" #run everyday at utc 12
+  push:
+    branches: main #run when files updated manually
+
+#create jobs    
+jobs:
+  dam: 
+    runs-on: windows-latest
+    
+    steps: 
+
+    # load repo
+    - uses: actions/checkout@master
+
+    # setup r
+    - uses: r-lib/actions/setup-r@master
+
+    # install packages
+    - name: Install packages
+      run: |
+        install.packages("tidyverse")
+        install.packages("httr")
+        install.packages("lubridate")
+      shell: Rscript {0}
+
+    - name: Download and collate dam data
+      run: |
+        source('setup_and_source.R')
+      shell: Rscript {0}
+      
+    - name: Commit files
+      run: |
+        git config --local user.name steeleb
+        git config --local user.email "steeleb@caryinstitute.org"
+        git add data/*
+        git commit -am "gh action dam download $(date)"
+        git push origin main
