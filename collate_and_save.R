@@ -33,7 +33,8 @@ dam_hist <- read.csv('data/Sunapee_NHDESDB_historical_raw.csv') %>%
 # join files; eliminate dupes
 dam_hist_add <- full_join(dam_hist, dam_download)
 
-dam_hist_add <- dam_hist_add[!duplicated(dam_hist_add),]
+dam_hist_add <- dam_hist_add[!duplicated(dam_hist_add),] %>% 
+  arrange(datetime)
 
 # write new .csv
 message('Saving updated file.')
