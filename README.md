@@ -1,6 +1,6 @@
 # nh-des-dam-data
 
-This repository employs GitHub Actions to automatically submit the HTML form and retrieve lake level data from the NH DES Dam Bureau data for Lake Sunapee on a daily basis. The GH Action runs daily and is on a one day time lag. The script also collates data with the historical record back to Jan 2020. All data are considered preliminary, per the NHDES website.
+This repository employs GitHub Actions to automatically submit the HTML form and retrieve lake level data from the NH DES Dam Bureau data for Lake Sunapee on a daily basis. The GH Action runs daily and is on a one day time lag. The script also collates data with the historical record back to Jan 2020. All data are considered preliminary, per the NHDES website. Additionally, there is a data file containing historical data in the same format from April 2010-Decemeber 2019. 
 
 The repository is managed by B. Steele (steeleb@caryinstitute.org). 
 
@@ -17,6 +17,7 @@ GH Actions runs the 'setup_and_source.R' script, which sources the 'download.R' 
 
 Data from January 2020 through June 2022 were downloaded and processed in the scripts 'download_2020.R', 'download_2021.R', and 'download_e2022.R', these scripts are located in the folder 'historical_download'. The initial collation of these files was completed in the script 'initial_collation.R'
 
+Data from April 2010 through December 2019 were downloaded and processed in the scripts 'download_YYYY.R', where YYYY is the year of data downloaded. These files were collated to create the file 'Sunapee_NHDESDB_historical_raw_2010-2019.csv'. Note that flow data, precipitation, and air temperature only go back to 2016. 
 
 ## Metadata from the NH DES website
 source: https://www4.des.state.nh.us/rti_home/station_information_display.asp?WID=westbasins&ID=SUNNH&NAME=Sunapee+Lake&FULLPOND=Full+Lake+=+10.50+ft.+Local+=+1093.15+ft.+above+sea+level
