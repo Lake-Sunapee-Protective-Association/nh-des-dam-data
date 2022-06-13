@@ -4,8 +4,6 @@ name: download and collate dam data
 on:
   schedule:
     - cron: "30 12 * * *" #run everyday at utc 12
-  push:
-    branches: main #run when files updated manually
 
 #create jobs    
 jobs:
