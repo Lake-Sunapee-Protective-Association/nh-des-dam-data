@@ -15,9 +15,13 @@ GH Actions runs the 'setup_and_source.R' script, which sources the 'download.R' 
 
 ### Previous Data Download and Processing
 
-Data from January 2020 through June 2022 were downloaded and processed in the scripts 'download_2020.R', 'download_2021.R', and 'download_e2022.R', these scripts are located in the folder 'historical_download'. The initial collation of these files was completed in the script 'initial_collation.R'
+Data from January 2020 through June 2022 were downloaded and processed in the scripts 'download_2020.R', 'download_2021.R', and 'download_e2022.R', these scripts are located in the folder 'historical_download/download'. The initial collation of these files was completed in the script 'collate/initial_collation.R'
 
 Data from April 2010 through December 2019 were downloaded and processed in the scripts 'download_YYYY.R', where YYYY is the year of data downloaded. These files were collated to create the file 'Sunapee_NHDESDB_historical_raw_2010-2019.csv'. Note that flow data, precipitation, and air temperature only go back to 2016. 
+
+Daily average lake level data from late December 1982 through December 2010 were harmonized in the script 'harmonize/early_record_harmonize.R'. The lake level data is realtively consistent, but the outflow data are quite spotty from the late '90s. Lake elevation was calculated from the reported lake depth at the dam, per the metadata in the original file from the NH DES Dam Bureau. Note these are purported to be daily averages and no metadata is available on processing steps by the NH DES Dam Bureau. Output file is 'data/Sunapee_NHDESDB_dailyhistorical_raw_1981-2010.csv'. 
+
+No cross referencing has been completed in any of the 3 output files and only basic QAQC to remove obvious errors from the earliest record (1982-2010) has been completed.
 
 ## Metadata from the NH DES website
 source: https://www4.des.state.nh.us/rti_home/station_information_display.asp?WID=westbasins&ID=SUNNH&NAME=Sunapee+Lake&FULLPOND=Full+Lake+=+10.50+ft.+Local+=+1093.15+ft.+above+sea+level
