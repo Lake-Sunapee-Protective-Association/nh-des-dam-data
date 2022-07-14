@@ -3,7 +3,7 @@ name: download and collate dam data
 #when it should run
 on:
   schedule:
-    - cron: "30 12 * * *" #run everyday at utc 12
+    - cron: "0 12 * * *" #run everyday at utc 12
 
 #create jobs    
 jobs:
@@ -33,8 +33,8 @@ jobs:
       
     - name: Commit files
       run: |
-        git config --local user.name steeleb
-        git config --local user.email "steeleb@caryinstitute.org"
+        git config --local user.name actions-user
+        git config --local user.email "actions@github.com"
         git add data/*
         git commit -am "gh action dam download $(date)"
         git push origin main
