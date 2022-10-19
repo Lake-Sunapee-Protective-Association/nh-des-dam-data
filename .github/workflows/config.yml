@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@main
 
     # setup r
-    - uses: r-lib/actions/setup-r@master
+    - uses: r-lib/actions/setup-r@main
 
     # install packages
     - name: Install packages
