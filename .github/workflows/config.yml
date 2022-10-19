@@ -13,7 +13,7 @@ jobs:
     steps: 
 
     # load repo
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
 
     # setup r
     - uses: r-lib/actions/setup-r@master
