@@ -13,10 +13,10 @@ jobs:
     steps: 
 
     # load repo
-    - uses: actions/checkout@main
+    - uses: actions/checkout@master
 
     # setup r
-    - uses: r-lib/actions/setup-r@main
+    - uses: r-lib/actions/setup-r@master
 
     # install packages
     - name: Install packages
