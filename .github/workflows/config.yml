@@ -1,9 +1,9 @@
 name: download and collate dam data
 
 #when it should run
-on:
-  schedule:
-    - cron: "0 12 * * *" #run everyday at utc 12
+#on:
+#  schedule:
+#    - cron: "0 12 * * *" #run everyday at utc 12
 
 #create jobs    
 jobs:
